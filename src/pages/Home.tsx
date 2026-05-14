@@ -18,7 +18,7 @@ export function Home({
         isDarkMode ? 'bg-black text-white' : 'bg-[#F4F1EA] text-[#111111]'
       }`}>
       {/* Background Image Wrapper */}
-      <div className="absolute top-0 left-0 w-full h-[1200px] z-0">
+      <div className="absolute top-0 left-0 w-full h-[1600px] md:h-[1200px] z-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
