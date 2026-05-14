@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Moon, Sun } from 'lucide-react';
+import { Eye, EyeOff, Moon, Sun, ArrowLeft } from 'lucide-react';
 
 type LoginPageProps = {
   onBack?: () => void;
@@ -13,6 +13,13 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
   const [rememberMe, setRememberMe] = useState(false);
   const [robotChecked, setRobotChecked] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [language, setLanguage] = useState('BM');
+
+  const handleLanguageSelect = (lang: string) => {
+    setLanguage(lang);
+    setIsLanguageOpen(false);
+  };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login submitted:', {
@@ -27,23 +34,84 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
   };
   return (
     <div className={`min-h-screen w-full relative overflow-hidden ${isDarkMode ? 'bg-[#0F1115]' : 'bg-[#DFDFDF]'}`}>
-      {onBack && (
-        <div className="fixed top-0 left-0 right-0 z-30 px-4 md:px-8 pt-4">
-          <button
-            onClick={onBack}
-            className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-colors font-poppins font-medium ${
-              isDarkMode
-                ? 'bg-black/70 text-white hover:bg-black'
-                : 'bg-white/90 text-black hover:bg-white'
-            }`}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Landing Page
-          </button>
+      {/* Load Material Symbols font */}
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+      {/* Header - matching landing page layout - fixed positioned */}
+      <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-24 pt-10">
+        {/* Left: Back Button */}
+        <div className="flex items-center">
+          {onBack && (
+            <button
+              onClick={onBack}
+              className={`inline-flex items-center justify-center w-8 h-8 rounded-lg transition-colors mr-8 ${
+                isDarkMode ? 'hover:bg-white/10' : 'hover:bg-black/10'
+              }`}
+              aria-label="Back to landing page">
+              <ArrowLeft
+                size={20}
+                className={isDarkMode ? 'text-white' : 'text-black'}
+              />
+            </button>
+          )}
         </div>
-      )}
+
+        {/* Right: Theme Toggle and Language Dropdown */}
+        <div className="flex items-center gap-2">
+          {/* Dark/Light Mode Toggle */}
+          <button
+            onClick={onToggleTheme}
+            className={`w-8 h-8 flex items-center justify-center rounded-lg transition-colors ${isDarkMode ? 'hover:bg-white/10' : 'hover:bg-black/10'}`}
+            aria-label="Toggle dark mode">
+            {isDarkMode ? (
+              <Sun className="h-5 w-5 text-white" aria-hidden="true" />
+            ) : (
+              <Moon className="h-5 w-5 text-black" aria-hidden="true" />
+            )}
+          </button>
+
+          {/* Language Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+              className={`flex items-center px-3 py-1.5 rounded-md shadow-sm transition-colors h-[36px] gap-[6px] pt-[12px] pb-[12px] pl-[6px] pr-[6px] ${isDarkMode ? 'bg-black text-white hover:bg-neutral-800' : 'bg-white text-black hover:bg-gray-100'}`}>
+              
+              <span
+                className={`material-symbols-outlined ${isDarkMode ? 'text-white' : 'text-black'}`}
+                style={{
+                  fontSize: '18px'
+                }}>
+                language
+              </span>
+              <span className="font-medium text-[16px] leading-none mt-[2px]">
+                {language}
+              </span>
+              <span
+                className={`material-symbols-outlined text-[20px] transition-transform duration-200 ${isDarkMode ? 'text-white/70' : 'text-gray-600'} ${isLanguageOpen ? 'rotate-180' : ''}`}>
+                arrow_drop_down
+              </span>
+            </button>
+
+            {/* Dropdown Menu */}
+            {isLanguageOpen && (
+              <div className={`absolute top-full right-0 mt-2 rounded-md shadow-lg border z-50 max-w-[85px] ${isDarkMode ? 'bg-black border-white/10' : 'bg-white border-gray-200'}`}>
+                <button
+                  onClick={() => handleLanguageSelect('BM')}
+                  className={`w-full text-left px-4 py-2 transition-colors ${language === 'BM' ? (isDarkMode ? 'bg-neutral-800 font-semibold text-white' : 'bg-gray-100 font-semibold text-black') : (isDarkMode ? 'text-white/80 hover:bg-white/10' : 'text-gray-700 hover:bg-gray-50')}`}>
+                  BM
+                </button>
+                <button
+                  onClick={() => handleLanguageSelect('EN')}
+                  className={`w-full text-left px-4 py-2 transition-colors ${language === 'EN' ? (isDarkMode ? 'bg-neutral-800 font-semibold text-white' : 'bg-gray-100 font-semibold text-black') : (isDarkMode ? 'text-white/80 hover:bg-white/10' : 'text-gray-700 hover:bg-gray-50')}`}>
+                  EN
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
       {/* Background Image Wrapper */}
       <div className="absolute top-0 left-0 w-full h-[1200px] z-0">
         <div
@@ -57,7 +125,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
       
 
       {/* Foreground Content */}
-      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8">
+      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8 pt-64">
       {/* Login Card */}
       <div className={`w-full max-w-[483px] rounded-xl p-6 flex flex-col items-center gap-6 transition-colors duration-300 ${
         isDarkMode ? 'bg-[#1A1F29]/95' : 'bg-[#F4F4F4]'
@@ -75,22 +143,9 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
         </h1>
 
         {/* Form Container */}
-        <div className={`relative w-full max-w-[392px] rounded-lg p-4 pt-12 transition-colors duration-300 ${
+        <div className={`relative w-full max-w-[392px] rounded-lg p-4 transition-colors duration-300 ${
           isDarkMode ? 'bg-[#111827]' : 'bg-white'
         }`}>
-          <button
-            type="button"
-            onClick={onToggleTheme}
-            className={`absolute top-3 right-3 inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors ${
-              isDarkMode
-                ? 'bg-white/10 text-white hover:bg-white/20'
-                : 'bg-black/5 text-black hover:bg-black/10'
-            }`}
-            aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-
           <form onSubmit={handleSubmit} className="flex flex-col gap-10">
             <div className="flex flex-col gap-6">
               {/* User Login Heading */}
