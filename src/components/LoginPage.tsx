@@ -125,29 +125,29 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
       
 
       {/* Foreground Content */}
-      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8 pt-64">
+      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8 pt-40">
       {/* Login Card */}
-      <div className={`w-full max-w-[483px] rounded-xl p-6 flex flex-col items-center gap-6 transition-colors duration-300 ${
+      <div className={`w-full max-w-[420px] rounded-xl p-4 flex flex-col items-center gap-4 transition-colors duration-300 ${
         isDarkMode ? 'bg-[#1A1F29]/95' : 'bg-[#F4F4F4]'
       }`}>
         {/* Logo */}
         <img
           src="./250-200.png"
           alt="MCMC Logo"
-          className="w-[90px] h-[74px]" />
+          className="w-[72px] h-[60px]" />
         
 
         {/* Title */}
-        <h1 className={`text-[32px] leading-[38.4px] font-bold text-center font-poppins ${isDarkMode ? 'text-white' : 'text-black'}`}>
+        <h1 className={`text-[26px] leading-[32px] font-bold text-center font-poppins ${isDarkMode ? 'text-white' : 'text-black'}`}>
           Postal Security Incident Reporting Platform
         </h1>
 
         {/* Form Container */}
-        <div className={`relative w-full max-w-[392px] rounded-lg p-4 transition-colors duration-300 ${
+        <div className={`relative w-full max-w-[340px] rounded-lg p-3 transition-colors duration-300 ${
           isDarkMode ? 'bg-[#111827]' : 'bg-white'
         }`}>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-10">
-            <div className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
               {/* User Login Heading */}
               <h2 className={`text-xl font-semibold text-center font-poppins ${isDarkMode ? 'text-white' : 'text-[#1A1A1A]'}`}>
                 User Login
@@ -169,7 +169,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="johndoe@gmail.com"
-                      className={`w-full h-12 px-4 border-[0.5px] rounded-md text-[15px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
+                      className={`w-full h-10 px-3 border-[0.5px] rounded-md text-[14px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
                         isDarkMode
                           ? 'bg-[#0B1220] border-[#334155] text-white placeholder:text-gray-400'
                           : 'bg-[#F2F2F2] border-[#E5E5E5] text-[#808080] placeholder:text-[#808080]'
@@ -193,7 +193,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Password"
-                      className={`w-full h-12 px-4 pr-12 border-[0.5px] rounded-md text-[15px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
+                      className={`w-full h-10 px-3 pr-10 border-[0.5px] rounded-md text-[14px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
                         isDarkMode
                           ? 'bg-[#0B1220] border-[#334155] text-white placeholder:text-gray-400'
                           : 'bg-[#F2F2F2] border-[#E5E5E5] text-[#808080] placeholder:text-[#808080]'
@@ -210,8 +210,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                       aria-label={
                       showPassword ? 'Hide password' : 'Show password'
                       }>
-                      
-                      {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                      {showPassword ? <EyeOff size={14} /> : <Eye size={14} />}
                     </button>
                   </div>
                 </div>
@@ -241,7 +240,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
               </div>
 
               {/* reCAPTCHA Mock */}
-              <div className={`flex items-center justify-between border rounded-sm shadow-[0px_1px_2px_rgba(0,0,0,0.1)] p-2.5 h-[73px] ${
+              <div className={`flex items-center justify-between border rounded-sm shadow-[0px_1px_2px_rgba(0,0,0,0.1)] p-2 h-[62px] ${
                 isDarkMode ? 'bg-[#0B1220] border-[#334155]' : 'bg-[#FAFAFA] border-[#D6D6D6]'
               }`}>
                 <div className="flex items-center gap-3.5">
@@ -289,8 +288,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full h-10 bg-[#0074C8] hover:bg-[#005a9e] active:bg-[#004a82] rounded-md text-white text-[15px] leading-5 tracking-[0.3px] font-bold font-roboto transition-colors">
-                
+                className="w-full h-9 bg-[#0074C8] hover:bg-[#005a9e] active:bg-[#004a82] rounded-md text-white text-[14px] leading-5 tracking-[0.3px] font-bold font-roboto transition-colors">
                 Log In
               </button>
             </div>
