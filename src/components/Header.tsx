@@ -24,7 +24,7 @@ export function Header({
       <header className="flex flex-col xl:flex-row justify-between items-start xl:items-center px-6 md:px-24 pt-10 gap-6 xl:gap-0 w-full">
         <div className="flex items-center gap-5">
           <img
-            src="/250-303.png"
+            src="./250-303.png"
             alt="MCMC Logo"
             className="w-[54px] h-[45px] object-contain shrink-0" />
           

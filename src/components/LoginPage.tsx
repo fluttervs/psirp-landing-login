@@ -64,7 +64,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
       }`}>
         {/* Logo */}
         <img
-          src="/250-200.png"
+          src="./250-200.png"
           alt="MCMC Logo"
           className="w-[90px] h-[74px]" />
         
@@ -221,7 +221,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <img
-                    src="/250-286.svg"
+                    src="./250-286.svg"
                     alt="reCAPTCHA"
                     className="w-12 h-[46px]" />
                   
