@@ -52,7 +52,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                     : 'bg-white/10 backdrop-blur-md border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.12)]'
               }`}>
               <div
-                className={`w-[60px] h-[60px] rounded-full flex items-center justify-center mb-8 shadow-inner transition-all duration-300 ${
+                className={`w-[60px] h-[60px] rounded-full flex items-center justify-center mb-6 shadow-inner transition-all duration-300 ${
                   isDarkMode
                     ? isHovered
                       ? 'bg-[#D0D0D040] scale-105'
@@ -70,13 +70,13 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                 </span>
               </div>
 
-              <div className="flex flex-col gap-3">
-                <h3 className={`font-semibold text-[20px] leading-tight transition-colors duration-300 ${
+              <div className="flex flex-col gap-2">
+                <h3 className={`font-semibold text-[18px] leading-tight transition-colors duration-300 ${
                   isDarkMode ? 'text-white' : isHovered ? 'text-black' : 'text-white'
                 }`}>
                   {feature.title}
                 </h3>
-                <p className={`md:text-[20px] transition-colors duration-300 text-[18px] ${
+                <p className={`text-sm transition-colors duration-300 leading-relaxed ${
                   isDarkMode ? 'text-white' : isHovered ? 'text-gray-700' : 'text-[#D8D8D8]'
                 }`}>
                   {feature.description}
