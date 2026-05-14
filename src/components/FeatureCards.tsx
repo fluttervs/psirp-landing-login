@@ -48,8 +48,8 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                     ? 'bg-black border-white/15 shadow-[0_18px_50px_rgba(0,0,0,0.38)] -translate-y-1'
                     : 'bg-black/40 border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.18)]'
                   : isHovered
-                    ? 'bg-white border-black/10 shadow-[0_18px_50px_rgba(0,0,0,0.14)] -translate-y-1'
-                    : 'bg-white/20 border-white/30 shadow-[0_8px_24px_rgba(0,0,0,0.12)]'
+                    ? 'bg-white border-white/10 shadow-[0_18px_50px_rgba(255,255,255,0.14)] -translate-y-1'
+                    : 'bg-white/10 backdrop-blur-md border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.12)]'
               }`}>
               <div
                 className={`w-[60px] h-[60px] rounded-full flex items-center justify-center mb-8 shadow-inner transition-all duration-300 ${
@@ -59,7 +59,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                       : 'bg-gray-800'
                     : isHovered
                       ? 'bg-black scale-105'
-                      : 'bg-gray-800'
+                      : 'bg-black/20'
                 }`}>
                 <span
                   className="material-symbols-outlined font-[300] transition-colors duration-300 text-white"
@@ -77,7 +77,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                   {feature.title}
                 </h3>
                 <p className={`md:text-[20px] transition-colors duration-300 text-[18px] ${
-                  isDarkMode ? 'text-white' : isHovered ? 'text-black' : 'text-white'
+                  isDarkMode ? 'text-white' : isHovered ? 'text-gray-700' : 'text-[#D8D8D8]'
                 }`}>
                   {feature.description}
                 </p>
