@@ -30,7 +30,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full">
         {features.map((feature, idx) => {
           const isHovered = hoveredIndex === idx;
 
@@ -42,7 +42,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
               onMouseLeave={() => setHoveredIndex(null)}
               onFocus={() => setHoveredIndex(idx)}
               onBlur={() => setHoveredIndex(null)}
-              className={`group cursor-pointer rounded-md border p-6 md:p-8 min-h-[300px] flex flex-col justify-between transition-all duration-300 ease-out outline-none ${
+              className={`group cursor-pointer rounded-md border p-6 md:p-7 min-h-[280px] flex flex-col justify-between transition-all duration-300 ease-out outline-none ${
                 isDarkMode
                   ? isHovered
                     ? 'bg-black border-white/15 shadow-[0_18px_50px_rgba(0,0,0,0.38)] -translate-y-1'
@@ -55,7 +55,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                 className={`w-[60px] h-[60px] rounded-full flex items-center justify-center mb-8 shadow-inner transition-all duration-300 ${
                   isDarkMode
                     ? isHovered
-                      ? 'bg-gray-600 scale-105'
+                      ? 'bg-[#D0D0D040] scale-105'
                       : 'bg-black/20'
                     : isHovered
                       ? 'bg-black scale-105'

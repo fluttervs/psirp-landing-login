@@ -57,9 +57,9 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
       
 
       {/* Foreground Content */}
-      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-16">
+      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8">
       {/* Login Card */}
-      <div className={`w-full max-w-[483px] rounded-xl p-8 flex flex-col items-center gap-9 transition-colors duration-300 ${
+      <div className={`w-full max-w-[483px] rounded-xl p-6 flex flex-col items-center gap-6 transition-colors duration-300 ${
         isDarkMode ? 'bg-[#1A1F29]/95' : 'bg-[#F4F4F4]'
       }`}>
         {/* Logo */}
@@ -91,14 +91,14 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
             {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-12">
-            <div className="flex flex-col gap-8">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+            <div className="flex flex-col gap-6">
               {/* User Login Heading */}
               <h2 className={`text-xl font-semibold text-center font-poppins ${isDarkMode ? 'text-white' : 'text-[#1A1A1A]'}`}>
                 User Login
               </h2>
 
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4">
                 {/* Email Input */}
                 <div className="flex flex-col gap-2">
                   <label

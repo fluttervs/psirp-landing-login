@@ -1,7 +1,7 @@
 import React from 'react';
 export function Footer({ isDarkMode }: { isDarkMode: boolean }) {
   return (
-    <footer className="py-10 px-6 md:px-24 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8 xl:gap-0 w-full z-20 relative bg-black transition-colors duration-300">
+    <footer className="py-8 px-6 md:px-24 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8 xl:gap-0 w-full z-20 relative bg-black transition-colors duration-300">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1">
           <p className="font-medium text-[16px] text-white">
