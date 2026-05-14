@@ -46,7 +46,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                 isDarkMode
                   ? isHovered
                     ? 'bg-black border-white/15 shadow-[0_18px_50px_rgba(0,0,0,0.38)] -translate-y-1'
-                    : 'bg-black/10 backdrop-blur-md border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.18)]'
+                    : 'bg-black/40 backdrop-blur-md border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.18)]'
                   : isHovered
                     ? 'bg-white border-white/10 shadow-[0_18px_50px_rgba(255,255,255,0.14)] -translate-y-1'
                     : 'bg-white/10 backdrop-blur-md border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.12)]'
@@ -56,7 +56,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                   isDarkMode
                     ? isHovered
                       ? 'bg-gray-600 scale-105'
-                      : 'bg-gray-800'
+                      : 'bg-black/20'
                     : isHovered
                       ? 'bg-black scale-105'
                       : 'bg-black/20'
