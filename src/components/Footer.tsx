@@ -13,8 +13,7 @@ export function Footer({ isDarkMode }: { isDarkMode: boolean }) {
             </p>
           </div>
           <p className="font-medium text-[14px] text-white/90">
-            ©2025 Malaysian Communications and Multimedia Commission. All right
-            reserved.
+            Copyright ©2026 Malaysian Communications and Multimedia Commission. All Rights Reserved.
           </p>
         </div>
 
