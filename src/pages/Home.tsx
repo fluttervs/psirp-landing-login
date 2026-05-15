@@ -31,10 +31,10 @@ export function Home({
       <div className="relative z-10 flex flex-col flex-1 w-full max-w-[1440px] mx-auto">
         <Header isDarkMode={isDarkMode} onToggleTheme={onToggleTheme} />
 
-        <main className="flex-1 flex flex-col px-6 md:px-24 pt-20 md:pt-[100px] pb-16 w-full">
+        <main className="flex-1 flex flex-col px-6 md:px-24 pt-24 md:pt-[120px] pb-20 w-full">
           <Hero onSignInClick={onSignInClick} isDarkMode={isDarkMode} />
 
-          <div className="mt-20 md:mt-[80px]">
+          <div className="mt-24 md:mt-[96px]">
             <FeatureCards isDarkMode={isDarkMode} />
           </div>
         </main>

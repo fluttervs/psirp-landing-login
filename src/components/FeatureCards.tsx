@@ -30,7 +30,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full">
         {features.map((feature, idx) => {
           const isHovered = hoveredIndex === idx;
 
@@ -42,7 +42,7 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
               onMouseLeave={() => setHoveredIndex(null)}
               onFocus={() => setHoveredIndex(idx)}
               onBlur={() => setHoveredIndex(null)}
-              className={`group cursor-pointer rounded-md border p-8 md:p-9 min-h-[340px] flex flex-col justify-between transition-all duration-300 ease-out outline-none ${
+              className={`group cursor-pointer rounded-md border p-6 md:p-7 min-h-[280px] flex flex-col justify-between transition-all duration-300 ease-out outline-none ${
                 isDarkMode
                   ? isHovered
                     ? 'bg-black border-white/15 shadow-[0_18px_50px_rgba(0,0,0,0.38)] -translate-y-1'
@@ -70,13 +70,13 @@ export function FeatureCards({ isDarkMode }: { isDarkMode: boolean }) {
                 </span>
               </div>
 
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 <h3 className={`font-semibold text-[20px] leading-tight transition-colors duration-300 ${
                   isDarkMode ? 'text-white' : isHovered ? 'text-black' : 'text-white'
                 }`}>
                   {feature.title}
                 </h3>
-                <p className={`text-base transition-colors duration-300 leading-relaxed ${
+                <p className={`md:text-[20px] transition-colors duration-300 text-[18px] ${
                   isDarkMode ? 'text-white' : isHovered ? 'text-gray-700' : 'text-[#D8D8D8]'
                 }`}>
                   {feature.description}

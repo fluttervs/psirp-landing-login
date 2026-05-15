@@ -41,8 +41,8 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
 
       {/* Header - matching landing page layout - fixed positioned */}
       <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-24 pt-10">
-        {/* Left: Back Button */}
-        <div className="flex items-center">
+        {/* Left: Back Button - adjust ml-6 for horizontal, mt-0 for vertical */}
+        <div className="flex items-center ml-12 mt-0">
           {onBack && (
             <button
               onClick={onBack}
@@ -52,14 +52,14 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
               aria-label="Back to landing page">
               <ArrowLeft
                 size={20}
-                className={isDarkMode ? 'text-white' : 'text-black'}
+                className="text-white"
               />
             </button>
           )}
         </div>
 
-        {/* Right: Theme Toggle and Language Dropdown */}
-        <div className="flex items-center gap-2">
+        {/* Right: Theme Toggle and Language Dropdown - adjust `mr-8` to move left, `mt-?` to move up/down */}
+        <div className="flex items-center gap-2 mr-12 mt-1">
           {/* Dark/Light Mode Toggle */}
           <button
             onClick={onToggleTheme}
@@ -125,35 +125,35 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
       
 
       {/* Foreground Content */}
-      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8 pt-40">
+      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8 pt-38">
       {/* Login Card */}
-      <div className={`w-full max-w-[420px] rounded-xl p-4 flex flex-col items-center gap-4 transition-colors duration-300 ${
+      <div className={`w-full max-w-[360px] rounded-xl p-3 flex flex-col items-center gap-3 transition-colors duration-300 ${
         isDarkMode ? 'bg-[#1A1F29]/95' : 'bg-[#F4F4F4]'
       }`}>
         {/* Logo */}
         <img
           src="./250-200.png"
           alt="MCMC Logo"
-          className="w-[72px] h-[60px]" />
+          className="w-[56px] h-[48px]" />
         
 
         {/* Title */}
-        <h1 className={`text-[26px] leading-[32px] font-bold text-center font-poppins ${isDarkMode ? 'text-white' : 'text-black'}`}>
+        <h1 className={`text-[20px] leading-[26px] font-medium text-center font-poppins ${isDarkMode ? 'text-white' : 'text-black'}`}>
           Postal Security Incident Reporting Platform
         </h1>
 
         {/* Form Container */}
-        <div className={`relative w-full max-w-[340px] rounded-lg p-3 transition-colors duration-300 ${
+        <div className={`relative w-full max-w-[280px] rounded-lg p-2 transition-colors duration-300 ${
           isDarkMode ? 'bg-[#111827]' : 'bg-white'
         }`}>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
               {/* User Login Heading */}
-              <h2 className={`text-xl font-semibold text-center font-poppins ${isDarkMode ? 'text-white' : 'text-[#1A1A1A]'}`}>
+              <h2 className={`text-xl font-semibold mt-2 text-center font-poppins ${isDarkMode ? 'text-white' : 'text-[#1A1A1A]'}`}>
                 User Login
               </h2>
 
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 {/* Email Input */}
                 <div className="flex flex-col gap-2">
                   <label
@@ -169,7 +169,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="johndoe@gmail.com"
-                      className={`w-full h-10 px-3 border-[0.5px] rounded-md text-[14px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
+                      className={`w-full h-9 px-2 border-[0.5px] rounded-md text-[13px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
                         isDarkMode
                           ? 'bg-[#0B1220] border-[#334155] text-white placeholder:text-gray-400'
                           : 'bg-[#F2F2F2] border-[#E5E5E5] text-[#808080] placeholder:text-[#808080]'
@@ -193,7 +193,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Password"
-                      className={`w-full h-10 px-3 pr-10 border-[0.5px] rounded-md text-[14px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
+                      className={`w-full h-9 px-2 pr-9 border-[0.5px] rounded-md text-[13px] leading-5 font-poppins focus:outline-none focus:ring-2 focus:ring-[#0074C8] focus:border-transparent ${
                         isDarkMode
                           ? 'bg-[#0B1220] border-[#334155] text-white placeholder:text-gray-400'
                           : 'bg-[#F2F2F2] border-[#E5E5E5] text-[#808080] placeholder:text-[#808080]'
@@ -210,7 +210,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                       aria-label={
                       showPassword ? 'Hide password' : 'Show password'
                       }>
-                      {showPassword ? <EyeOff size={14} /> : <Eye size={14} />}
+                      {showPassword ? <EyeOff size={12} /> : <Eye size={12} />}
                     </button>
                   </div>
                 </div>
@@ -240,7 +240,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
               </div>
 
               {/* reCAPTCHA Mock */}
-              <div className={`flex items-center justify-between border rounded-sm shadow-[0px_1px_2px_rgba(0,0,0,0.1)] p-2 h-[62px] ${
+              <div className={`flex items-center justify-between border rounded-sm shadow-[0px_1px_2px_rgba(0,0,0,0.1)] p-2 h-[50px] ${
                 isDarkMode ? 'bg-[#0B1220] border-[#334155]' : 'bg-[#FAFAFA] border-[#D6D6D6]'
               }`}>
                 <div className="flex items-center gap-3.5">
@@ -277,7 +277,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
                   <img
                     src="./250-286.svg"
                     alt="reCAPTCHA"
-                    className="w-12 h-[46px]" />
+                    className="w-9 h-[28px]" />
                   
                   <span className="text-[8px] font-medium leading-none text-[#A6A6A6] font-roboto">
                     Privacy - Terms
@@ -288,7 +288,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full h-9 bg-[#0074C8] hover:bg-[#005a9e] active:bg-[#004a82] rounded-md text-white text-[14px] leading-5 tracking-[0.3px] font-bold font-roboto transition-colors">
+                className="w-full h-8 bg-[#0074C8] hover:bg-[#005a9e] active:bg-[#004a82] rounded-md text-white text-[13px] leading-5 tracking-[0.3px] font-bold font-roboto transition-colors">
                 Log In
               </button>
             </div>
