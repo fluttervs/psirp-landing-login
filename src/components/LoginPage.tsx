@@ -63,7 +63,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
           {/* Dark/Light Mode Toggle */}
           <button
             onClick={onToggleTheme}
-            className={`w-8 h-8 flex items-center justify-center rounded-lg transition-colors ${isDarkMode ? 'hover:bg-white/10' : 'hover:bg-black/10'}`}
+            className={`relative left-[-10px] w-8 h-8 flex items-center justify-center rounded-lg transition-colors ${isDarkMode ? 'hover:bg-white/10' : 'hover:bg-black/10'}`}
             aria-label="Toggle dark mode">
             {isDarkMode ? (
               <Sun className="h-5 w-5 text-white" aria-hidden="true" />
