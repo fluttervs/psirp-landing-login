@@ -33,7 +33,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
     );
   };
   return (
-    <div className={`min-h-screen w-full relative overflow-hidden ${isDarkMode ? 'bg-[#0F1115]' : 'bg-[#DFDFDF]'}`}>
+    <div className={`h-screen w-full relative overflow-hidden ${isDarkMode ? 'bg-[#0F1115]' : 'bg-[#DFDFDF]'}`}>
       {/* Load Material Symbols font */}
       <link
         rel="stylesheet"
@@ -125,9 +125,9 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
       
 
       {/* Foreground Content */}
-      <div className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-8 pt-38">
+      <div className="relative z-10 h-full w-full flex items-center justify-center px-4 py-8 pt-38">
       {/* Login Card */}
-      <div className={`w-full max-w-[360px] rounded-xl p-3 flex flex-col items-center gap-3 transition-colors duration-300 ${
+      <div className={`w-full max-w-[360px] min-h-[520px] rounded-xl p-3 flex flex-col items-center justify-center gap-3 transition-colors duration-300 ${
         isDarkMode ? 'bg-[#1A1F29]/95' : 'bg-[#F4F4F4]'
       }`}>
         {/* Logo */}
@@ -146,14 +146,14 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
         <div className={`relative w-full max-w-[280px] rounded-lg p-2 transition-colors duration-300 ${
           isDarkMode ? 'bg-[#111827]' : 'bg-white'
         }`}>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-            <div className="flex flex-col gap-3">
+          <form onSubmit={handleSubmit} className="w-full flex flex-col items-center justify-center gap-6">
+            <div className="w-full flex flex-col gap-3">
               {/* User Login Heading */}
               <h2 className={`text-xl font-semibold mt-2 text-center font-poppins ${isDarkMode ? 'text-white' : 'text-[#1A1A1A]'}`}>
                 User Login
               </h2>
 
-              <div className="flex flex-col gap-3">
+              <div className="w-full flex flex-col gap-3">
                 {/* Email Input */}
                 <div className="flex flex-col gap-2">
                   <label
