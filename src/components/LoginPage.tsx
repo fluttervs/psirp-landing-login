@@ -68,7 +68,7 @@ export function LoginPage({ onBack, isDarkMode, onToggleTheme }: LoginPageProps)
             {isDarkMode ? (
               <Sun className="h-5 w-5 text-white" aria-hidden="true" />
             ) : (
-              <Moon className="h-5 w-5 text-black" aria-hidden="true" />
+              <Moon className="h-5 w-5 text-white" aria-hidden="true" />
             )}
           </button>
 
